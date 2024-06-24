@@ -49,7 +49,6 @@ const displayMovies = (movies) => {
     infoContainer.style.display = "flex";
     infoContainer.style.flexDirection = "column";
     infoContainer.style.alignItems = "center";
-    infoContainer.style.width = "100%";
     infoContainer.style.textAlign = "left";
     infoContainer.appendChild(title);
     infoContainer.appendChild(releaseDate);
