@@ -51,7 +51,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  max-width: 600px;
+  max-width: 750px;
 }
 .movie p {
   max-width: 30ch;

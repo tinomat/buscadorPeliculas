@@ -1,9 +1,12 @@
 let api_key = "bb3b6afb809e95e7ed52ec5081c1b1f0";
 let urlAPI = "https://api.themoviedb.org/3/search/movie";
 let urlImg = "https://image.tmdb.org/t/p/w200";
+let resultContainer = document.getElementById("results");
+
 const searchMovies = () => {
   let searchInput = document.getElementById("searchInput").value;
   // Url de la api, api_key y selector que va a ser igual al valor del input texto que vamos a usar para buscar las peliculas
+  resultContainer.innerHTML = "Cargando...";
   fetch(`${urlAPI}?api_key=${api_key}&query=${searchInput}`)
     .then((response) => response.json())
     // Para la respuesta de la promesa usamos funcion que creamos para mostrar las peliculas y le pasamos como argumento la respuesta de la busqueda
@@ -11,7 +14,6 @@ const searchMovies = () => {
     .then((response) => displayMovies(response.results));
 };
 const displayMovies = (movies) => {
-  let resultContainer = document.getElementById("results");
   // Vaciamos el contenido en caso de que contenga algo
   resultContainer.innerHTML = "";
   // Si movies.length es igual a 0, es decir que no se encontró la pelicula
